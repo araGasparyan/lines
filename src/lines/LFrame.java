@@ -30,7 +30,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Ara
+ * @author Ara Gasparyan
  */
 public class LFrame extends JFrame implements ActionListener, MouseListener {
 

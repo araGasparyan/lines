@@ -13,19 +13,18 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Ara
+ * @author Ara Gasparyan
  */
 public class LPanel extends JPanel {
-
-    JLabel label1 = new JLabel();
-    Icon test2 = new ImageIcon("assets/leftpanel/left.png");
+    JLabel label = new JLabel();
+    Icon icon = new ImageIcon("assets/leftpanel/left.png");
 
     public LPanel() {
         setLayout(null);
         setBounds(2, 27, 200, 458);
 
-        label1.setIcon(test2);
-        label1.setBounds(10, 0, 500, 450);
-        add(label1);
+        label.setIcon(icon);
+        label.setBounds(10, 0, 500, 450);
+        add(label);
     }
 }

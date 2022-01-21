@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author matenadaran
+ * @author Ara Gasparyan
  */
 class Animation implements Runnable {
     Thread t;

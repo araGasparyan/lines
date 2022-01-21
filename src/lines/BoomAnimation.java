@@ -15,7 +15,6 @@ import javax.swing.ImageIcon;
  * @author Ara Gasparyan
  */
 public class BoomAnimation implements Runnable {
-
     private final Thread t;
     private LFrame l;
     private int i, j;

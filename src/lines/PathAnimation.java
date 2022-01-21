@@ -7,7 +7,7 @@ package lines;
 
 /**
  *
- * @author Ara
+ * @author Ara Gasparyan
  */
 public class PathAnimation implements Runnable {
 

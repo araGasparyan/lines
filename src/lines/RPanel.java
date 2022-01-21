@@ -11,45 +11,45 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Ara
+ * @author Ara Gasparyan
  */
 public class RPanel extends JPanel {
-
-    JLabel label = new JLabel();
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    JLabel label;
+    private javax.swing.JLabel jLabel;
+    private javax.swing.JPanel jPanel;
 
     public RPanel() {
         initComponents();
-        label = jLabel1;
+        label = jLabel;
         setBounds(636, 27, 155, 458);
 
         add(label);
     }
 
     private void initComponents() {
+        jPanel = new javax.swing.JPanel();
+        jLabel = new javax.swing.JLabel();
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel.setPreferredSize(new java.awt.Dimension(155, 458));
+        jPanel.setRequestFocusEnabled(false);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(155, 458));
-        jPanel1.setRequestFocusEnabled(false);
+        jLabel.setIcon(new javax.swing.ImageIcon("assets/rightpanel/right.png"));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("assets/rightpanel/right.png")); // NOI18N
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanel1Layout);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(jLabel)
                                 .addGap(0, 5, Short.MAX_VALUE))
         );
+
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1)
+                                .addComponent(jLabel)
                                 .addContainerGap(306, Short.MAX_VALUE))
         );
 
