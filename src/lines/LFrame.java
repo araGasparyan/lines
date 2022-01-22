@@ -47,11 +47,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     private Setter s;
     private final JMenuBar menubar = new JMenuBar();
     private final JMenu menu1 = new JMenu("Game");
-    private final JMenu menu2 = new JMenu("Help");
     private final JMenu item1 = new JMenu("New Game");
-    private final JMenuItem save = new JMenuItem("Save Game");
-    private final JMenuItem contin = new JMenuItem("Continue Game");
-    private final JMenu view = new JMenu("View");
     private final JMenuItem item1_1 = new JMenuItem("Easy");
     private final JMenuItem item1_2 = new JMenuItem("Normal");
     private final JMenuItem item1_3 = new JMenuItem("Professional");
@@ -422,8 +418,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         g = new GridLayout(9, 9, 1, 1);
         setJMenuBar(menubar);
         menubar.add(menu1);
-        menubar.add(view);
-        menubar.add(menu2);
 
         item1_1.addActionListener(this);
         item1_2.addActionListener(this);
@@ -432,8 +426,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         item1.add(item1_2);
         item1.add(item1_3);
         menu1.add(item1);
-        menu1.add(save);
-        menu1.add(contin);
 
         item10.addActionListener(this);
 
@@ -473,7 +465,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
 
         setResizable(false);
         setLocation(350, 100);
-        setSize(800, 630);
+        setSize(800, 600);
         setVisible(true);
     }
 
