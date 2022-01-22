@@ -57,9 +57,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     private final JMenuItem item1_1 = new JMenuItem("Easy");
     private final JMenuItem item1_2 = new JMenuItem("Normal");
     private final JMenuItem item1_3 = new JMenuItem("Professional");
-    private final JMenuItem item4 = new JMenuItem("rotate right");
-    private final JMenuItem item5 = new JMenuItem("rotate left");
-    private final JMenuItem item6 = new JMenuItem("flip");
     private final JMenuItem item10 = new JMenuItem("Exit");
     private final JLabel busy = new JLabel();
     private final JLabel points = new JLabel();
@@ -84,25 +81,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
 
     private final int boomanimsleeptime;
 
-    public Icon boom1 = new ImageIcon("assets/boom/rboom-1.png");
-    public Icon boom2 = new ImageIcon("assets/boom/rboom-2.png");
-    public Icon boom3 = new ImageIcon("assets/boom/rboom-3.png");
-    public Icon boom4 = new ImageIcon("assets/boom/rboom-4.png");
-    public Icon boom5 = new ImageIcon("assets/boom/rboom-5.png");
-    public Icon boom6 = new ImageIcon("assets/boom/rboom-6.png");
-    public Icon boom7 = new ImageIcon("assets/boom/rboom-7.png");
-    public Icon boom8 = new ImageIcon("assets/boom/rboom-8.png");
-    public Icon boom9 = new ImageIcon("assets/boom/rboom-9.png");
-    public Icon boom10 = new ImageIcon("assets/boom/rboom-10.png");
-    public Icon boom11 = new ImageIcon("assets/boom/rboom-11.png");
-    public Icon boom12 = new ImageIcon("assets/boom/rboom-12.png");
-    public Icon boom13 = new ImageIcon("assets/boom/rboom-13.png");
-    public Icon boom14 = new ImageIcon("assets/boom/rboom-14.png");
-    public Icon boom15 = new ImageIcon("assets/boom/rboom-15.png");
-    public Icon boom16 = new ImageIcon("assets/boom/rboom-16.png");
-    public Icon boom17 = new ImageIcon("assets/boom/rboom-17.png");
-
-    //magenta boom balls
+    // Magenta boom balls
     Icon mboom1 = new ImageIcon("assets/mboom/boom-01.png");
     Icon mboom2 = new ImageIcon("assets/mboom/boom-02.png");
     Icon mboom3 = new ImageIcon("assets/mboom/boom-03.png");
@@ -124,7 +103,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     Icon mboom19 = new ImageIcon("assets/mboom/boom-19.png");
     Icon mboom20 = new ImageIcon("assets/mboom/boom-20.png");
 
-    // darkblue boom balls
+    // Darkblue boom balls
     Icon dbboom1 = new ImageIcon("assets/dbboom/boom-01.png");
     Icon dbboom2 = new ImageIcon("assets/dbboom/boom-02.png");
     Icon dbboom3 = new ImageIcon("assets/dbboom/boom-03.png");
@@ -146,7 +125,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     Icon dbboom19 = new ImageIcon("assets/dbboom/boom-19.png");
     Icon dbboom20 = new ImageIcon("assets/dbboom/boom-20.png");
 
-    //blue boom balls
+    // Blue boom balls
     Icon bboom1 = new ImageIcon("assets/bboom/boom-01.png");
     Icon bboom2 = new ImageIcon("assets/bboom/boom-02.png");
     Icon bboom3 = new ImageIcon("assets/bboom/boom-03.png");
@@ -168,7 +147,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     Icon bboom19 = new ImageIcon("assets/bboom/boom-19.png");
     Icon bboom20 = new ImageIcon("assets/bboom/boom-20.png");
 
-    //red boom balls
+    // Red boom balls
     Icon rboom1 = new ImageIcon("assets/rboom/boom-01.png");
     Icon rboom2 = new ImageIcon("assets/rboom/boom-02.png");
     Icon rboom3 = new ImageIcon("assets/rboom/boom-03.png");
@@ -190,7 +169,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     Icon rboom19 = new ImageIcon("assets/rboom/boom-19.png");
     Icon rboom20 = new ImageIcon("assets/rboom/boom-20.png");
 
-    //yellow boom balls
+    // Yellow boom balls
     Icon yboom1 = new ImageIcon("assets/yboom/boom-01.png");
     Icon yboom2 = new ImageIcon("assets/yboom/boom-02.png");
     Icon yboom3 = new ImageIcon("assets/yboom/boom-03.png");
@@ -212,7 +191,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     Icon yboom19 = new ImageIcon("assets/yboom/boom-19.png");
     Icon yboom20 = new ImageIcon("assets/yboom/boom-20.png");
 
-    //green boom balls
+    // Green boom balls
     Icon gboom1 = new ImageIcon("assets/gboom/boom-01.png");
     Icon gboom2 = new ImageIcon("assets/gboom/boom-02.png");
     Icon gboom3 = new ImageIcon("assets/gboom/boom-03.png");
@@ -240,7 +219,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     private int dissballs;
     private Object o = null;
 
-    // if there is a process of ball booming the booming is true, else it is false
+    // If there is a process of ball booming the booming is true, else it is false
     private boolean booming = false;
 
     boolean test = true;
@@ -275,7 +254,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
 
     private JButton button = new JButton();
 
-    //the number of last pressed filled cell plus 1
+    // The number of last pressed filled cell plus 1
     private int tmp = 0;
 
     private void start() {
@@ -303,9 +282,11 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 } else {
                     ball[i * 9 + j] = empty;
                 }
+
                 label[i * 9 + j] = new JLabel();
                 label[i * 9 + j].setIcon(ball[i * 9 + j]);
                 label[i * 9 + j].addMouseListener(this);
+
                 gridpanel.add(label[i * 9 + j]);
             }
         }
@@ -317,7 +298,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
             temppoint += PointCounter.pointCounter(s.getDiss(), s.getCboardbefore(), colors);
             points.setText(String.valueOf(temppoint));
             fillboom();
-
         } else {
             s.randfix(appballs);
             s.randfixcolor(colors);
@@ -329,9 +309,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
             } else {
                 fillboom();
             }
-
         }
-
     }
 
     private void fill() {
@@ -355,12 +333,10 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 }
 
                 label[i * 9 + j].setIcon(ball[i * 9 + j]);
-
             }
         }
 
         validate();
-
     }
 
     private void fillboom() {
@@ -380,29 +356,17 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 } else if (s.getCboard()[i][j] == 6 && (s.getDiss()[i][j] == 0)) {
                     label[i * 9 + j].setIcon(magenta);
                 } else if (s.getCboardbefore()[i][j] == 1 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 1);
-
                 } else if (s.getCboardbefore()[i][j] == 2 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 2);
-
                 } else if (s.getCboardbefore()[i][j] == 3 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 3);
-
                 } else if (s.getCboardbefore()[i][j] == 4 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 4);
-
                 } else if (s.getCboardbefore()[i][j] == 5 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 5);
-
                 } else if (s.getCboardbefore()[i][j] == 6 && (s.getDiss()[i][j] == -1)) {
-
                     new BoomAnimation(this, i, j, boomanimsleeptime, 6);
-
                 } else {
                     label[i * 9 + j].setIcon(empty);
                 }
@@ -441,7 +405,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
 
     public LFrame(int colors, int dissballs, int appballs) {
 
-        // starts the song
+        // Starts the song
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -483,7 +447,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         button.setText("refresh");
         busy.setText(String.valueOf(s.getBusy()));
         points.setText(String.valueOf(0));
-        linescorptext.setText("Lines Coorporation".toUpperCase());
+        linescorptext.setText("Lines Lines Lines!!!".toUpperCase());
         linescorptext.setPreferredSize(new Dimension(10, 25));
 
         panelatributes.setLayout(new BorderLayout());
