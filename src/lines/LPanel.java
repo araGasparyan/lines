@@ -19,8 +19,8 @@ public class LPanel extends JPanel {
     Icon icon = new ImageIcon("assets/leftpanel/left.png");
 
     public LPanel() {
-        setLayout(null);
-        setBounds(2, 27, 200, 458);
+        // setLayout(null);
+        setBounds(-55, 27, 280, 458);
 
         label.setIcon(icon);
         label.setBounds(10, 0, 500, 450);

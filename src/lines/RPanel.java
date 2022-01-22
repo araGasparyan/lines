@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
  * @author Ara Gasparyan
  */
 public class RPanel extends JPanel {
@@ -20,7 +19,7 @@ public class RPanel extends JPanel {
     public RPanel() {
         initComponents();
         label = jLabel;
-        setBounds(636, 27, 155, 458);
+        setBounds(630, 27, 155, 458);
 
         add(label);
     }
