@@ -437,8 +437,8 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         button.setText("refresh");
         busy.setText(String.valueOf(s.getBusy()));
         points.setText(String.valueOf(0));
-        linescorptext.setText("   © 2015 All rights reserved                               " +
-                "                               aragasparyan.com   ");
+        linescorptext.setText("   © 2015. All rights reserved                             " +
+                "                               aragasparyan.com    ");
         linescorptext.setPreferredSize(new Dimension(10, 25));
 
         panelatributes.setLayout(new BorderLayout());
