@@ -56,7 +56,7 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     private final JLabel points = new JLabel();
     private final JLabel linescorptext = new JLabel();
 
-    private MediaPlayer song = new MediaPlayer("\\assets\\audio\\fonSong.au");
+    private MediaPlayer song = new MediaPlayer("/assets/audio/fonSong.au");
 
     private final Icon blue = new ImageIcon("assets/static/blue.gif");
     private final Icon red = new ImageIcon("assets/static/red.gif");
