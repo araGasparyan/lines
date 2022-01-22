@@ -118,7 +118,7 @@ public class Setter {
     public void disappear(int m) {
         int tmp[][] = new int[n][n];
 
-        //Disappear horizontal lines
+        // Disappear horizontal lines
         for (int i = 0; i < n; i++) {
 
             for (int j = 0; j < n - m + 1; j++) {
@@ -134,7 +134,6 @@ public class Setter {
                     if (!btmp) {
                         break;
                     }
-
                 }
 
                 if (btmp) {
@@ -290,12 +289,6 @@ public class Setter {
 
         }
 
-        /*
-      for(int i=0; i<n; i++){
-                      for(int j=0; j<n; j++){
-                        System.out.print(board[i][j]);
-                if ( j== n-1 ) System.out.println();}}
-         */
         setDiss(tmp);
         setBusy(getBusy() - count);
     }
@@ -303,7 +296,6 @@ public class Setter {
     // method fills those fields of board which are non-empty and do not have colors
     // method changes cboard. m - how many colors it is necessary to fill 
     public void randfixcolor(int m) {
-        // int board[][]=new int[n][n];
         for (int i = 0; i < n; i++) {
 
             for (int j = 0; j < n; j++) {
@@ -317,7 +309,7 @@ public class Setter {
     }
 
     // method makes non-empty random m empty fields of board. 
-    //(Count of non-empty fields) Busy are also changed
+    // (Count of non-empty fields) Busy are also changed
     public void randfix(int m) {
 
         int i, j;
@@ -374,7 +366,7 @@ public class Setter {
         setBusy(count);
     }
 
-    // Find way
+    // Find a way
     public void findway(int sh, int sv, int eh, int ev) {
         // A temporary matrix of possible ways
         int tmp[][] = new int[n][n];
@@ -405,13 +397,6 @@ public class Setter {
             btmp1 |= true;
         }
 
-        /*
-       for(int i=0;i<n;i++){
-                    for(int j=0;j<n;j++){ 
-          System.out.print(tmp[i][j]);
-                if ( j== n-1 ) System.out.println();
-         }}
-         */
         //fill the matrix tmp
         if (btmp && btmp1) {
             int count;
@@ -426,30 +411,28 @@ public class Setter {
                                 tmp[i - 1][j] = 2;
                                 count++;
                             }
-                        } //System.out.println("1st " +  i+ " " + " " + j +" " +count);}
+                        }
 
                         if ((i < n - 1) && (board[i + 1][j] == 0) && (tmp[i][j] == 2)) {
                             if (tmp[i + 1][j] != 2) {
                                 tmp[i + 1][j] = 2;
                                 count++;
                             }
-                        } //System.out.println("2st "+  i+ " " + " " + j +" " +count);}
+                        }
 
                         if ((j > 0) && (board[i][j - 1] == 0) && (tmp[i][j] == 2)) {
                             if (tmp[i][j - 1] != 2) {
                                 tmp[i][j - 1] = 2;
                                 count++;
                             }
-                        } //System.out.println("3st "+  i+ " " + " " + j +" " +count);}
+                        }
 
                         if ((j < n - 1) && (board[i][j + 1] == 0) && (tmp[i][j] == 2)) {
                             if (tmp[i][j + 1] != 2) {
                                 tmp[i][j + 1] = 2;
                                 count++;
                             }
-                        } //System.out.println("4st "+  i+ " " + " " + j +" " +count);}
-
-                        //System.out.print(tmp[0][0]);
+                        }
                     }
                 }
 
@@ -457,13 +440,6 @@ public class Setter {
 
         }
 
-        /*      
-  for(int i=0;i<n;i++){
-         for(int j=0;j<n;j++){
-        System.out.print(tmp[i][j]);
-                if ( j== n-1 ) System.out.println();
-         }}
-         */
         //Checks if there is a way of board[sh][sv] to board[eh][ev]
         if (tmp[eh][ev] == 2) {
             setWay(true);
@@ -488,8 +464,8 @@ public class Setter {
                 }
             }
         }
-        setBoard(board);
 
+        setBoard(board);
     }
 
     //method creates chess
@@ -503,10 +479,9 @@ public class Setter {
                     board[i][j] = 0;
                 }
 
-                // System.out.print(board[i][j]);
-                //if ( j== n-1 ) System.out.println();
             }
         }
+
         setBoard(board);
     }
 

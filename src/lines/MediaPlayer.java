@@ -26,16 +26,11 @@ public class MediaPlayer implements Runnable {
     private volatile boolean isPlayingFlag = false;
     private volatile float volume_dB = 0.0f;
 
-    public MediaPlayer() {
-    }
-
     public MediaPlayer(String filename) {
         this.filename = filename;
     }
 
     /**
-     * @param filename the name of the file that is going to be played
-     * 
      * @throws IOException
      * @throws UnsupportedAudioFileException
      * @throws FileNotFoundException
@@ -46,7 +41,7 @@ public class MediaPlayer implements Runnable {
 
         if (filename.toLowerCase().endsWith(".txt")) {
             System.out.println("Text Files Not Supported!");
-        } else //if (filename.toLowerCase().endsWith(".mp3") || filename.toLowerCase().endsWith(".ogg"))
+        } else // if (filename.toLowerCase().endsWith(".mp3") || filename.toLowerCase().endsWith(".ogg"))
         {
 
             final URL fileurl = new URL("file:///" + System.getProperty("user.dir") + filename);
@@ -60,7 +55,6 @@ public class MediaPlayer implements Runnable {
                     baseFormat.getChannels() * 2,
                     baseFormat.getSampleRate(),
                     false);
-            //System.out.println("Channels : " + baseFormat.getChannels());                
             audioStream = AudioSystem.getAudioInputStream(audioFormat, in);
             final byte[] data = new byte[4096];
             try {
@@ -69,7 +63,6 @@ public class MediaPlayer implements Runnable {
                 res = (SourceDataLine) AudioSystem.getLine(info);
                 res.open(audioFormat);
                 sourceLine = res;
-                //System.out.println("Entering ...");
 
                 // Start
                 onPlay();
@@ -84,14 +77,11 @@ public class MediaPlayer implements Runnable {
                                 ((FloatControl) sourceLine.getControl(FloatControl.Type.MASTER_GAIN)).setValue(volume_dB);
                             }
                             sourceLine.write(data, 0, nBytesRead);
-                            // nBytesWritten = sourceLine.write(data, 0, nBytesRead);
-                            // System.out.println("... -->" + data[0] + " bytesWritten:" + nBytesWritten);
                         }
                     } else {
                         isPlayingFlag = false;
                     }
                 }
-                // System.out.println("Done ...");
 
                 // Stop
                 sourceLine.drain();
@@ -117,16 +107,12 @@ public class MediaPlayer implements Runnable {
         try {
             playSound();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (UnsupportedAudioFileException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (LineUnavailableException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -138,49 +124,10 @@ public class MediaPlayer implements Runnable {
     public void onPlay() {
     }
 
-    public void pause() {
-        pauseFlag = true;
-        onPause();
-    }
-
-    public void onPause() {
-    }
-
-    public void resume() {
-        pauseFlag = false;
-        onResume();
-    }
-
-    public void onResume() {
-    }
-
-    public void stop() {
-        stopFlag = true;
-    }
-
     public void onStop() {
-    }
-
-    public boolean isPlaying() {
-        return isPlayingFlag;
-    }
-
-    public boolean isPaused() {
-        return pauseFlag;
     }
 
     public void setFile(String filename) {
         this.filename = filename;
-    }
-
-    public void setVolume(Float volume) {
-        volume = volume == null ? 1.0F : volume;
-        volume = volume <= 0.0F ? 0.0001F : volume;
-        setVolumeInDecibels((float) (20.0 * (Math.log(volume) / Math.log(10.0))));
-    }
-
-    public void setVolumeInDecibels(Float decibels) {
-        decibels = decibels == null ? 0.0F : decibels;
-        this.volume_dB = decibels;
     }
 }

@@ -109,6 +109,7 @@ public class Pathpainter {
                     waylength = k;
                     return shortestway;
                 }
+
                 for (int i = 0; i < percolation.length; i++) {
                     for (int j = 0; j < percolation.length; j++) {
                         if (shortestway[i][j] == k) {

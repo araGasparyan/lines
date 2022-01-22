@@ -273,26 +273,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         this.booming = booming;
     }
 
-    public int getColors() {
-        return colors;
-    }
-
-    public void setColors(int colors) {
-        this.colors = colors;
-    }
-
-    public int getAppballs() {
-        return appballs;
-    }
-
-    public void setAppballs(int appballs) {
-        this.appballs = appballs;
-    }
-
-    public int getTemppoint() {
-        return temppoint;
-    }
-
     private JButton button = new JButton();
 
     //the number of last pressed filled cell plus 1
@@ -337,7 +317,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
             temppoint += PointCounter.pointCounter(s.getDiss(), s.getCboardbefore(), colors);
             points.setText(String.valueOf(temppoint));
             fillboom();
-            //new Animation(this);
 
         } else {
             s.randfix(appballs);
@@ -347,7 +326,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 temppoint += PointCounter.pointCounter(s.getDiss(), s.getCboardbefore(), colors);
                 points.setText(String.valueOf(temppoint));
                 fillboom();
-                // new Animation(this);
             } else {
                 fillboom();
             }
@@ -390,22 +368,16 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (s.getCboard()[i][j] == 1 && (s.getDiss()[i][j] == 0)) {
-                    //  ball[i*9+j]=blue;
                     label[i * 9 + j].setIcon(blue);
                 } else if (s.getCboard()[i][j] == 2 && (s.getDiss()[i][j] == 0)) {
-                    // ball[i*9+j]=red;
                     label[i * 9 + j].setIcon(red);
                 } else if (s.getCboard()[i][j] == 3 && (s.getDiss()[i][j] == 0)) {
-                    // ball[i*9+j]=darkblue;
                     label[i * 9 + j].setIcon(darkblue);
                 } else if (s.getCboard()[i][j] == 4 && (s.getDiss()[i][j] == 0)) {
-                    //ball[i*9+j]=yellow;
                     label[i * 9 + j].setIcon(yellow);
                 } else if (s.getCboard()[i][j] == 5 && (s.getDiss()[i][j] == 0)) {
-                    //  ball[i*9+j]=green;
                     label[i * 9 + j].setIcon(green);
                 } else if (s.getCboard()[i][j] == 6 && (s.getDiss()[i][j] == 0)) {
-                    // ball[i*9+j]=magenta;
                     label[i * 9 + j].setIcon(magenta);
                 } else if (s.getCboardbefore()[i][j] == 1 && (s.getDiss()[i][j] == -1)) {
 
@@ -432,7 +404,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                     new BoomAnimation(this, i, j, boomanimsleeptime, 6);
 
                 } else {
-                    //  ball[i*9+j]=empty;
                     label[i * 9 + j].setIcon(empty);
                 }
             }
@@ -442,20 +413,16 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     private void fillpath(int hor, int ver) {
-        //&&(perc[i][j]<Pathpainter.getWaylength())
         int[][] perc;
         perc = Pathpainter.finalshortestway(s.getPercolation(), hor, ver);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (perc[i][j] > 0) {
-                    //System.out.println("something");
                     ball[i * 9 + j] = new ImageIcon("assets/path/path.gif");
                     label[i * 9 + j].removeAll();
                     label[i * 9 + j].setIcon(ball[i * 9 + j]);
 
                     validate();
-                    //if clear the comment, we will have an animation, which don't work in a right way, should be debugged
-                    //Thread.sleep(50);
                 }
             }
         }
@@ -470,18 +437,11 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 }
             }
         }
-        /*
-            new Test(this);
-               while(isTest()){
-                   System.out.println("aaa");
-               }
-                setTest(true);
-         */
     }
 
     public LFrame(int colors, int dissballs, int appballs) {
 
-        //starts the song
+        // starts the song
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -512,25 +472,19 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         menu1.add(item1);
         menu1.add(save);
         menu1.add(contin);
-        //menu1.addSeparator();
 
-        //item1.addActionListener(this);
         item10.addActionListener(this);
 
         menu1.addSeparator();
         menu1.add(item10);
         start();
         startfill();
-//       label[0].addAncestorListener((AncestorListener) this);
         button.addActionListener(this);
         button.setText("refresh");
-        // busy.setSize(new Dimension(500,500));
         busy.setText(String.valueOf(s.getBusy()));
         points.setText(String.valueOf(0));
         linescorptext.setText("Lines Coorporation".toUpperCase());
         linescorptext.setPreferredSize(new Dimension(10, 25));
-        //linescorptext.setForeground(Color.red);
-        //      linescorptext.setBounds(0, 0, 0, 0);
 
         panelatributes.setLayout(new BorderLayout());
         panelatributes.add(busy, BorderLayout.WEST);
@@ -542,7 +496,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         gridpanel.setBackground(Color.black);
         gridpanel.setLayout(g);
         setLayout(null);
-        // mainpanel.setBounds(100, 100, 100, 100);
         mainpanel.setLayout(new BorderLayout());
         mainpanel.add(gridpanel, BorderLayout.CENTER);
         mainpanel.add(panelatributes, BorderLayout.NORTH);
@@ -617,33 +570,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
             System.out.println("I am button");
 
         }
-
-        /*
-         
-       startfill();    
-       
-       
-        panel1.setLayout(new BorderLayout()); 
-        panel1.add(busy, BorderLayout.WEST);
-        panel1.add(points, BorderLayout.EAST);
-        
-      //  panel.setPreferredSize(new Dimension(500,500));
-                panel.setBackground(Color.black);
-                panel.setLayout(g); 
-                 setLayout(new FlowLayout());
-                  mainpanel.setLayout(new BorderLayout());
-                 mainpanel.add(panel, BorderLayout.CENTER);
-                 mainpanel.add(panel1, BorderLayout.NORTH);
-    // mainpanel.add(button);
-                 add(mainpanel);
-         */
-        // new LFrame(6,5,3);
-        /*
-                     if(s.getBusy()==81){
-           System.out.println("Game over");
-       }
-         */
-        // fill();
     }
 
     @Override
@@ -758,30 +684,20 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                     s.getCboard()[k / 9][k % 9] = m;
 
                     fillpath(k / 9, k % 9);
-//                repaint();
-//                PathAnimation p = new PathAnimation(this);
                     try {
                         Thread.sleep(300);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Animation.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    // new FillAnimation(this);
-//               while(test){
-//                   System.out.println(test);
-//            }
 
                     step(k / 9, k % 9);
 
                     busy.setText(String.valueOf(s.getBusy()));
-
-                    //      Thread.sleep(1000);
-                    //   fillboom();
                     test = true;
                     validate();
 
                 }
 
-                //  tmp=k+1;
                 validate();
                 break;
             }
