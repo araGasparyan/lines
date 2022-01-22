@@ -5,7 +5,6 @@
  */
 package lines;
 
-import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
