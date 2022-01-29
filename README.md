@@ -26,4 +26,4 @@ From the assets folder, you can configure the game by putting corresponding asse
 ### License
 
 Copyright © 2015, [Ara Gasparyan](https://aragasparyan.com).
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](https://opensource.org/licenses/MIT).
