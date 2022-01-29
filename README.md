@@ -21,4 +21,9 @@ From the assets folder, you can configure the game by putting corresponding asse
   - mred.gif - representing a red ball animation on a user click on it
   - myellow.gif - representing a yellow ball animation on a user click on it
 - **path** folder stores images with size 50 x 50 and format gif which are used for path painting during a ball movement.
-- 
+- The folders **bboom**, **dbboom**, **gboom**, **mboom**, **rboom**, **yboom** store png images with size 50 x 50 (20 images oer folder) which are used for balls disappearing animation correspondingly for blue, dark blue, green, magenta, red and yellow balls.
+
+### License
+
+Copyright © 2015, [Ara Gasparyan](https://aragasparyan.com).
+Released under the [MIT License](LICENSE).
