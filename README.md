@@ -23,7 +23,11 @@ From the assets folder, you can configure the game by putting corresponding asse
 - **path** folder stores images with size 50 x 50 and format gif which are used for path painting during a ball movement.
 - The folders **bboom**, **dbboom**, **gboom**, **mboom**, **rboom**, **yboom** store png images with size 50 x 50 (20 images oer folder) which are used for balls disappearing animation correspondingly for blue, dark blue, green, magenta, red and yellow balls.
 
-### License
+## Build
 
+## Contribution
+A lot of improvements can be done to make the code less rigid, less fragile, and mobile. The current code is more likely the container of algorithms that are needed for the game, i.e. code organization is not done following the best practices of OOP design. So reorganization of the classes and applying design patterns to the code architecture will allow managing the game more flexibly as well as reuse the components for creating similar games.
+
+## License
 Copyright © 2015, [Ara Gasparyan](https://aragasparyan.com).
 Released under the [MIT License](https://opensource.org/licenses/MIT).
