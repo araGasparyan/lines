@@ -887,7 +887,7 @@ public class BoomAnimation implements Runnable {
                 }
                 break;
             default:
-                System.out.println("Something is wrong");
+                System.out.println();
         }
         l.getLabel()[i * 9 + j].setIcon(l.getEmpty());
 

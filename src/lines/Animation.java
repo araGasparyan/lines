@@ -26,7 +26,6 @@ class Animation implements Runnable {
     @Override
     public void run() {
         l.setBooming(true);
-        System.out.println(l.isBooming());
 
         try {
             Thread.sleep(1000);
@@ -35,6 +34,5 @@ class Animation implements Runnable {
         }
 
         l.setBooming(false);
-        System.out.println(l.isBooming());
     }
 }

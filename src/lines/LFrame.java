@@ -386,15 +386,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         }
 
         validate();
-
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                System.out.print(" " + perc[i][j]);
-                if (j == 8) {
-                    System.out.println();
-                }
-            }
-        }
     }
 
     public LFrame(int colors, int dissballs, int appballs) {
@@ -404,7 +395,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
             @Override
             public void run() {
                 for (int i = 0;; i++) {
-                    System.out.println(i + "th song");
                     song.play();
                 }
             }
@@ -521,8 +511,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
         } else if (e.getSource() == button) {
 
             new BoomAnimation(this, 1, 0, boomanimsleeptime, 5);
-            System.out.println("I am button");
-
         }
     }
 
@@ -545,7 +533,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 1)) {
                     fill();
                     label[k].setIcon(mblue);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -554,7 +541,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 2)) {
                     fill();
                     label[k].setIcon(mred);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -563,7 +549,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 3)) {
                     fill();
                     label[k].setIcon(mdarkblue);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -572,7 +557,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 4)) {
                     fill();
                     label[k].setIcon(myellow);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -581,7 +565,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 5)) {
                     fill();
                     label[k].setIcon(mgreen);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -590,7 +573,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 if ((e.getSource() == label[k]) && (s.getCboard()[k / 9][k % 9] == 6)) {
                     fill();
                     label[k].setIcon(mmagenta);
-                    System.out.println("pressed" + k);
                     tmp = k + 1;
                     validate();
                     break;
@@ -598,14 +580,10 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
                 validate();
 
             }
-            o = e.getSource();
 
+            o = e.getSource();
             new PathAnimation(this);
 
-            System.out.println(Thread.currentThread().toString());
-
-            System.out.println("last pressed" + tmp);
-            System.out.println("busy cells" + s.getBusy());
             validate();
 
         }
@@ -625,7 +603,6 @@ public class LFrame extends JFrame implements ActionListener, MouseListener {
     public synchronized void superstep1() {
         for (int k = 0; k < 81; k++) {
             if ((o == label[k]) && (s.getCboard()[k / 9][k % 9] == 0) && (tmp > 0)) {
-                System.out.println("empty" + k);
                 s.findway((tmp - 1) / 9, (tmp - 1) % 9, k / 9, k % 9);
 
                 if (s.isWay()) {

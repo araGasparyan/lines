@@ -17,7 +17,5 @@ public class Lines {
     public static void main(String[] args) {
         LFrame frame = new LFrame(6,5,3);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-      
-        System.out.println("The main thread is over");
     }
 }

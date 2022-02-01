@@ -78,12 +78,12 @@ public class Pathpainter {
         }
 
         if (shortestway[hor][ver] == -1) {
-            System.out.println("It is not possible to go there");
+            // System.out.println("It is not possible to go there");
             return null;
         }
 
         if (shortestway[hor][ver] == 0) {
-            System.out.println("You can not go from your place to your place!!!");
+            // System.out.println("You can not go from your place to your place!!!");
             return null;
         }
 

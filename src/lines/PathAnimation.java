@@ -18,7 +18,6 @@ public class PathAnimation implements Runnable {
         this.l = l;
         t = new Thread(this);
         t.start();
-        System.out.println(t.toString());
     }
 
     @Override
