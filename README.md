@@ -23,7 +23,35 @@ From the assets folder, you can configure the game by putting corresponding asse
 - **path** folder stores images with size 50 x 50 and format gif which are used for path painting during a ball movement.
 - The folders **bboom**, **dbboom**, **gboom**, **mboom**, **rboom**, **yboom** store png images with size 50 x 50 (20 images oer folder) which are used for balls disappearing animation correspondingly for blue, dark blue, green, magenta, red and yellow balls.
 
-## Build
+## Setup
+(1) Change directory into the root of the project:
+```sh
+cd lines
+```
+
+(2) Compile the source code and keep the bytecode in the **target** folder:
+```sh
+javac -d target src/lines/*.java
+```
+
+(3) Create jar artifact:
+```sh
+cp -r src/META-INF/ target/
+cd target
+mkdir artifact
+jar cfvm artifact/lines.jar META-INF/MANIFEST.MF lines/*.class
+```
+
+(4) Copy assets to the jar's directory:
+```sh
+cp -r ../assets/ ./artifact/
+```
+
+(5) Run the game:
+```sh
+cd artifact
+java -jar lines.jar
+```
 
 ## Contribution
 A lot of improvements can be done to make the code less rigid, less fragile, and mobile. The current code is more likely the container of algorithms that are needed for the game, i.e. code organization is not done following the best practices of OOP design. So reorganization of the classes and applying design patterns to the code architecture will allow managing the game more flexibly as well as reuse the components for creating similar games.
