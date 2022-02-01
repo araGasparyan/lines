@@ -23,6 +23,14 @@ From the assets folder, you can configure the game by putting corresponding asse
 - **path** folder stores images with size 50 x 50 and format gif which are used for path painting during a ball movement.
 - The folders **bboom**, **dbboom**, **gboom**, **mboom**, **rboom**, **yboom** store png images with size 50 x 50 (20 images oer folder) which are used for balls disappearing animation correspondingly for blue, dark blue, green, magenta, red and yellow balls.
 
+The background song of the game can be disabled by commenting out the "Starts the song" code section in the constructor of the class LFrame (lines 394 - 401).
+
+The rules of the game (balls behavior) can be controlled from the main method of the class LInes by adjusting parameters of the constructor of the class LFrame:
+- **colors** - the count of ball colors presented in the game (default 6).
+- **dissballs** - the minimum number of balls of the same color which should be aligned in a horizontal, vertical, or diagonal manner in order to make the balls disappear from the board (default 5).
+- **appballs** - the count of random balls which appear on the empty cells of the game board on each game step (default 3).
+
+
 ## Setup
 (1) Change directory into the root of the project:
 ```sh
