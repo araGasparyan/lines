@@ -1,6 +1,9 @@
 # Lines
 A game from the 90's written by Core Java. On each game step, 3 random balls appear on the empty cells of the game board. The positions and colors of random balls are distributed uniformly. On each game step, a ball can be moved from its current position to an empty position (if there is a path) and if 5 or more balls of the same color are aligned in a horizontal, vertical, or diagonal manner all the balls disappear from the board.
 
+<img src="./capture1.png" Alt="Puzzle game colored lines by Ara Gasparyan" />
+<img src="./capture2.png" Alt="Puzzle game colored lines by Ara Gasparyan" />
+
 ## Adjsuting the game
 From the assets folder, you can configure the game by putting corresponding assets.
 - **leftpanel** and **rightpanel** folders store left and right images (left.png and right.png) of the game windows. The sizes of images are recommended to be 119 x 453.
