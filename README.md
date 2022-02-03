@@ -46,7 +46,7 @@ cd lines
 javac -d target src/lines/*.java
 ```
 
-(3) Create jar artifact:
+(3) Create jar artifact (this step may depend on OS):
 ```sh
 cp -r src/META-INF/ target/
 cd target
